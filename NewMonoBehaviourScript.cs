@@ -29,8 +29,12 @@ void Update()
 {
 Move();
 RotateView();
+shoot();
 }
-
+void shoot(){
+	if (Input.GetKey(KeyCode.E)){Transform animator = transform.GetChild(0).GetChild(0);
+animator.GetComponent<Animation>().Play("New Animation");}
+}
 void Move()
 {
 float moveHorizontal = Input.GetAxis("Horizontal");
